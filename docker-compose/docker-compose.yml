@@ -1,0 +1,5 @@
+services:
+    ros2_foxy_bt:
+        image: ${IMAGE_NAME}:${IMAGE_TAG}
+        container_name: ros2_foxy_bt_v3
+        restart: on-failure
