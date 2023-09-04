@@ -4,7 +4,7 @@ cd "$parent_path"
 
 TARGET_ARCH=$1
 echo TARGET_ARCH: ${TARGET_ARCH}
-IMAGE_NAME="ros2_foxy_bt"
+IMAGE_NAME="ros2_foxy_bt_v3"
 IMAGE_TAG="latest"
 DOCKER_CLI=$(which docker)
 echo --- add image env variables
