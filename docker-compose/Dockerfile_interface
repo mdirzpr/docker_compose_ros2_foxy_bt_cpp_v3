@@ -121,7 +121,7 @@ RUN echo 'Installing requirements in image' &&\
     libsqlite3-dev \
     unzip \ 
     /app/ctrlx-datalayer-1.9.1.deb &&\
-    chmod +x /app/bt_demo/bt_Beispiel.sh && \
+    chmod +x /app/bt_demo/bt_example.sh && \
     rm -rf /var/lib/apt/lists/* &&\
     rm /app/ctrlx-datalayer-1.9.1.deb &&\
     apt-get clean &&\
@@ -147,7 +147,7 @@ RUN echo "--- Installing BehaviorTree_CPP library ---" && \
 
 RUN echo "--- Making the bt_demo example ---" && \
     cd /app/bt_demo &&\
-    bash ./bt_Beispiel.sh
+    bash ./bt_example.sh
 
 
 ###########################################
