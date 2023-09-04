@@ -1,0 +1,32 @@
+# Getting started
+# See https://snapcraft.io/docs/getting-started
+# Snapcraft references
+# See https://snapcraft.io/docs/snapcraft-yaml-reference
+name: ctrlx-docker-ros2-bt
+version: "1.0"
+base: core20
+summary: Containerized MQTT broker with automated topic generation from datalayer data
+description: |
+    This snap contains the docker image for integration of ros2_foxy and behavior_tree_cpp.
+grade: stable
+confinement: strict
+
+parts:
+    docker-compose:
+        plugin: dump
+        source: ./docker-compose
+        organize:
+            "*": docker-compose/${SNAPCRAFT_PROJECT_NAME}/
+slots:
+    docker-compose:
+        interface: content
+        content: docker-compose
+        source:
+            read:
+                - $SNAP/docker-compose/${SNAPCRAFT_PROJECT_NAME}
+    docker-volumes:
+        interface: content
+        content: docker-volumes
+        source:
+            write:
+                - $SNAP_DATA/docker-volumes/${SNAPCRAFT_PROJECT_NAME}
